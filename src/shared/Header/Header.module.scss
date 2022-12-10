@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+}
