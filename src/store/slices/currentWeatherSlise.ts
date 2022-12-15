@@ -1,7 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { Axios, AxiosResponse } from "axios"
+import { Weather } from "../types/types"
 
 type currentWeather = {
-    weather: any,
+    weather: Weather,
     isLoading: boolean,
     response: Response
 }
@@ -11,8 +13,12 @@ type Response = {
     message: string
 }
 
-const initialState = {
-    weather: {},
+const initialState: currentWeather = {
+    weather: {
+        main: {
+            temp: 0,
+        }
+    },
     isLoading: false,
     response:{
         status: 0,
@@ -20,16 +26,36 @@ const initialState = {
     }
 }
 
-export const currentWeatherSlice = createSlice(options: {
+export const currentWeatherSlice = createSlice({
     name: 'current_weather',
     initialState,
     reducers:{
         fetchCurrentWeather(state){
             state.isLoading = true
         },
-        fetchCurrentWeatherSuccess(state, action: any){
-            //state.weather = action.
+        fetchCurrentWeatherSuccess(
+            state, 
+            action: PayloadAction<AxiosResponse<Weather>>
+            ){
+            state.weather = action.payload.data
+            state.isLoading = false
+            state.response = {
+                status: action.payload.status,
+                message: action.payload.statusText
+            }
+        },
+
+        fetchCurrentWeatherError(
+            state, 
+            action: PayloadAction<AxiosResponse<Weather>>
+            ){
+            state.isLoading = false
+            state.response = {
+                status: action.payload.status,
+                message: action.payload.statusText
+            }
         },
     }
-}
-)
+})
+
+export default currentWeatherSlice.reducer
