@@ -1,30 +1,30 @@
-import React from 'react'
-import { GlobalSvgSelector } from '../../../../assets/images/global/GlobalSvgSelector'
-import { Weather } from '../../../../store/types/types'
-import _s from './ThisDay.module.scss'
+import React from 'react';
+import { GlobalSvgSelector } from '../../../../assets/images/global/GlobalSvgSelector';
+import { Weather } from '../../../../store/types/types';
+import s from './ThisDay.module.scss';
 
 interface Props {
-    weather: Weather
+  weather: Weather;
 }
 
-export const ThisDay = ({weather}: Props) => {
-    return (
-        <header className={_s.ThisDay}>
-            <div className={_s.topBlock}>
-                <div className={_s.topBlockWrapper}>
-                    <div className={_s.thisTemp}>{Math.floor(weather.main.temp)}</div>
-                    <div className={_s.thisDayName}>Сегодня</div>
-                </div>
-                <GlobalSvgSelector id="today-img" />
-            </div>
-            <div className={_s.bottomBlock}>
-                <div className={_s.thisTime}>
-                    Время: <span>21:54</span>
-                </div>
-                <div className={_s.thisCity}>
-                    Время: <span>Краснодар</span>
-                </div>
-            </div>
-        </header>
-    )
-}
+export const ThisDay = ({ weather }: Props) => {
+  return (
+    <div className={s.thisDay}>
+      <div className={s.topBlock}>
+        <div className={s.topBlock_wrapper}>
+          <div className={s.thisTemp}>{Math.floor(weather.main.temp)}°</div>
+          <div className={s.thisDayName}>Сегодня</div>
+        </div>
+        <GlobalSvgSelector id="sun" />
+      </div>
+      <div className={s.bottomBlock}>
+        <div className={s.thisTime}>
+          Время: <span>21:54</span>
+        </div>
+        <div className={s.thisCity}>
+          Время: <span>Санкт-Петербург</span>
+        </div>
+      </div>
+    </div>
+  );
+};
