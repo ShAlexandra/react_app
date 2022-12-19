@@ -1,9 +1,15 @@
 import { AxiosResponse } from 'axios';
 import api from '../axios';
-import { Weather } from '../store/types/types';
+import { Weather, WeatherList } from '../store/types/types';
 
-export class WeatherService {
+export class WeatherServiceDay {
   static getCurrentWeather(city: string): Promise<AxiosResponse<Weather>> {
     return api.get<Weather>(`/weather?q=${city}`);
+  }
+}
+
+export class WeatherServiceDays {
+  static getDaysWeather(city: string, numberOfDays: number): Promise<AxiosResponse<WeatherList>> {
+    return api.get<WeatherList>(`/forecast/daily?q=${city}&cnt=${numberOfDays}`);
   }
 }
