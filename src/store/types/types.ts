@@ -3,3 +3,9 @@ export type Weather = {
         temp: number
     }
 }
+
+export type WeatherList = {
+    main: {
+        //TODO(список погоды)
+    }
+}
