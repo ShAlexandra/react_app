@@ -1,5 +1,5 @@
 import { WeatherServiceDay } from "../../services/WeatherService"
-import { currentWeatherSlice } from "../slices/currentWeatherSlise"
+import { currentWeatherSlice } from "../slices/currentWeatherSlice"
 import { AppDispatch } from "../store"
 
 export const fetchCurrentWeather = 
