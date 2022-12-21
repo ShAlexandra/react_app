@@ -3,26 +3,27 @@ import { GlobalSvgSelector } from '../../../../assets/images/global/GlobalSvgSel
 
 import { ResponsiveBar } from '@nivo/bar'
 
-import _s from './Graphics.module.scss'
+import _s from './UVGraphics.module.scss'
 
 interface Props {}
 
+
 const data = [
   {
-    wind: "Wind",
-    speed: 20
-  }
+    UV: "UV",
+    index: 4.20
+  },
 ];
 
-export const Graphics = () => {
+export const UVGraphics = () => {
   return (
     <div style={{height: 500, width: 400}}>
     <ResponsiveBar
       data={data}
-      keys={["speed"]}
-      indexBy="wind"
+      keys={["index"]}
+      indexBy="UV"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-      maxValue={33}
+      maxValue={12}
       padding={0.4}
       valueScale={{ type: "linear" }}
       colors="#3182CE"
@@ -34,7 +35,7 @@ export const Graphics = () => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "speed in m/s",
+        legend: "UV index",
         legendPosition: "middle",
         legendOffset: -40
       }}
