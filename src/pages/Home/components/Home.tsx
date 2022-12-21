@@ -4,6 +4,8 @@ import { Days } from './Days/Days'
 import _s from './Home.module.scss'
 import { ThisDay } from './ThisDay/ThisDay'
 import { Graphics } from "./Graphics/Graphics"
+import { SecondGraphics } from "./SecondGraphics/SecondGraphics"
+import { UVGraphics } from './UVGraphics/UVGraphics'
 
 interface Props {}
 
@@ -16,6 +18,8 @@ export const Home = (props: Props) => {
             
             <Days/>
             <Graphics/>
+            <SecondGraphics/>
+            <UVGraphics/>
         </div>
     )
 }
