@@ -62,7 +62,7 @@ const initialState: daysWeather = {
     }
 }
 
-export const currentWeatherSlice = createSlice({
+export const daysWeatherSlice = createSlice({
     name: 'days_weather',
     initialState,
     reducers:{
@@ -81,7 +81,7 @@ export const currentWeatherSlice = createSlice({
             }
         },
 
-        fetchCurrentWeatherError(
+        fetchDaysWeatherError(
             state, 
             action: PayloadAction<AxiosResponse<WeatherList>>
             ){
@@ -94,4 +94,4 @@ export const currentWeatherSlice = createSlice({
     }
 })
 
-export default currentWeatherSlice.reducer
+export default daysWeatherSlice.reducer

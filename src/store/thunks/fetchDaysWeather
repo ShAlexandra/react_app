@@ -1,0 +1,19 @@
+import { WeatherServiceDay, WeatherServiceDays } from "../../services/WeatherService"
+import { daysWeatherSlice } from "../slices/daysWeatherSlice"
+import { AppDispatch } from "../store"
+
+export const fetchDaysWeather = 
+(city: string, numberOfDays: number) => async (dispatch: AppDispatch) => {
+    try{
+        dispatch(daysWeatherSlice.actions.fetchDaysWeather())
+        const res = await WeatherServiceDays.getDaysWeather(city, numberOfDays)
+        if (res.status == 200) {
+            dispatch(daysWeatherSlice.actions.fetchDaysWeatherSuccess(res))
+        } else {
+            dispatch(daysWeatherSlice.actions.fetchDaysWeatherError(res))
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}

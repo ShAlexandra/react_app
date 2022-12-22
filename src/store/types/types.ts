@@ -6,6 +6,6 @@ export type Weather = {
 
 export type WeatherList = {
     main: {
-        //TODO(список погоды)
+        weatherList: Array<Weather>
     }
 }
