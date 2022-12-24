@@ -12,6 +12,7 @@ interface Props {}
 export const Home = (props: Props) => {
   const dispatch = useCustomDispatch();
   const { weather } = useCustomSelector(selectCurrentWeatherData);
+  const { weatherList } = useCustomDispatch(selectCurrentWeatherData);
 
   useEffect(() => {
     dispatch(fetchCurrentWeather('krasnodar'));
@@ -21,7 +22,7 @@ export const Home = (props: Props) => {
       <div className={s.wrapper}>
         <ThisDay weather={weather} />
       </div>
-      <Days />
+      <Days weatherList={weatherList}/>
     </div>
   );
 };
