@@ -19,37 +19,44 @@ const initialState: daysWeather = {
             weatherList:[
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
                 {
                     main:{
-                        temp:0
+                        temp_day:0,
+                        temp_night:0
                     }
                 },
             ]

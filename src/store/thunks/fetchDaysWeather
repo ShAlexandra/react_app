@@ -1,4 +1,4 @@
-import { WeatherServiceDay, WeatherServiceDays } from "../../services/WeatherService"
+import { WeatherServiceDays } from "../../services/WeatherService"
 import { daysWeatherSlice } from "../slices/daysWeatherSlice"
 import { AppDispatch } from "../store"
 
