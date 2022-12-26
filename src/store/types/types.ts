@@ -1,6 +1,7 @@
 export type Weather = {
     main: {
-        temp: number
+        temp_day: number
+        temp_night: number
     }
 }
 

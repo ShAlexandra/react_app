@@ -16,7 +16,8 @@ type Response = {
 const initialState: currentWeather = {
     weather: {
         main: {
-            temp: 0,
+            temp_day:0,
+                        temp_night:0
         }
     },
     isLoading: false,
