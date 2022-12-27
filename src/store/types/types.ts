@@ -10,3 +10,9 @@ export type WeatherList = {
         weatherList: Array<Weather>
     }
 }
+
+export type GraphicUV = {
+    main: {
+        index: number
+    }
+}

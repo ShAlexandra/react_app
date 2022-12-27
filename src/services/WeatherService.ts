@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import api from '../axios';
-import { Weather, WeatherList } from '../store/types/types';
+import { GraphicUV, Weather, WeatherList } from '../store/types/types';
 
 export class WeatherServiceDay {
   static getCurrentWeather(city: string): Promise<AxiosResponse<Weather>> {
@@ -11,5 +11,11 @@ export class WeatherServiceDay {
 export class WeatherServiceDays {
   static getDaysWeather(city: string, numberOfDays: number): Promise<AxiosResponse<WeatherList>> {
     return api.get<WeatherList>(`/forecast/daily?q=${city}&cnt=${numberOfDays}`);
+  }
+}
+
+export class GraphicUVService {
+  static getGraphicUV(city: string): Promise<AxiosResponse<GraphicUV>> {
+    return api.get<GraphicUV>(`/weather?q=${city}`);
   }
 }

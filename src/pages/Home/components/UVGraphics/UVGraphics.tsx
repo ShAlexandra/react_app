@@ -3,9 +3,13 @@ import { GlobalSvgSelector } from '../../../../assets/images/global/GlobalSvgSel
 
 import { ResponsiveBar } from '@nivo/bar'
 
-import _s from './UVGraphics.module.scss'
 
-interface Props {}
+import _s from './UVGraphics.module.scss'
+import { GraphicUV } from '../../../../store/types/types';
+
+interface Props {
+  graphicUV: GraphicUV;
+}
 
 
 const data = [
@@ -15,11 +19,16 @@ const data = [
   },
 ];
 
-export const UVGraphics = () => {
+export const UVGraphics = ({ graphicUV }: Props) => {
   return (
     <div style={{height: 500, width: 400}}>
     <ResponsiveBar
-      data={data}
+      data={[
+        {
+          UV: "UV",
+          index: graphicUV.main.index
+        },
+      ]}
       keys={["index"]}
       indexBy="UV"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
