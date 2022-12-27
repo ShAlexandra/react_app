@@ -1,13 +1,19 @@
 export type Weather = {
     main: {
-        temp_day: number
+        temp: number
+    }
+}
+
+export type WeatherDays = {
+    main: {
+        temp_day: number,
         temp_night: number
     }
 }
 
 export type WeatherList = {
     main: {
-        weatherList: Array<Weather>
+        weatherList: Array<WeatherDays>
     }
 }
 
