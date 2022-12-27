@@ -15,8 +15,8 @@ type Response = {
 
 const initialState: graphicUV = {
     graphicUV: {
-        main: {
-            index: 0
+        wind: {
+            speed: 0
         }
     },
     isLoading: false,
@@ -37,6 +37,7 @@ export const graphicUVSlice = createSlice({
             state, 
             action: PayloadAction<AxiosResponse<GraphicUV>>
             ){
+            console.log("Зашел в success")
             state.graphicUV = action.payload.data
             state.isLoading = false
             state.response = {
@@ -49,6 +50,7 @@ export const graphicUVSlice = createSlice({
             state, 
             action: PayloadAction<AxiosResponse<GraphicUV>>
             ){
+            console.log("Зашел в error")
             state.isLoading = false
             state.response = {
                 status: action.payload.status,

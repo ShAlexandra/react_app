@@ -18,7 +18,7 @@ export type WeatherList = {
 }
 
 export type GraphicUV = {
-    main: {
-        index: number
+    wind: {
+        speed: number
     }
 }

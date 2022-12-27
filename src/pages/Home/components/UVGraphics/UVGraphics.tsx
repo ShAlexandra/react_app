@@ -12,12 +12,12 @@ interface Props {
 }
 
 
-const data = [
-  {
-    UV: "UV",
-    index: 4.20
-  },
-];
+// const data = [
+//   {
+//     UV: "UV",
+//     index: 4.20
+//   },
+// ];
 
 export const UVGraphics = ({ graphicUV }: Props) => {
   return (
@@ -26,7 +26,7 @@ export const UVGraphics = ({ graphicUV }: Props) => {
       data={[
         {
           UV: "UV",
-          index: graphicUV.main.index
+          index: graphicUV.wind.speed
         },
       ]}
       keys={["index"]}
