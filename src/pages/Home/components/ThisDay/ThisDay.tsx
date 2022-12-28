@@ -15,7 +15,7 @@ export const ThisDay = ({ weather }: Props) => {
           <div className={s.thisTemp}>{Math.floor(weather.main.temp)}°</div>
           <div className={s.thisDayName}>Сегодня</div>
         </div>
-        <GlobalSvgSelector id="sun" />
+        <GlobalSvgSelector id = {weather.weather[0].main} />
       </div>
       <div className={s.bottomBlock}>
         <div className={s.thisCity}>

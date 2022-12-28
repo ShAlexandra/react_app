@@ -2,6 +2,11 @@ export type Weather = {
     main: {
         temp: number
     }
+    weather: {
+        0: {
+            main: string
+        }
+    }
 }
 
 export type WeatherList = {
