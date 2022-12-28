@@ -18,9 +18,6 @@ export const ThisDay = ({ weather }: Props) => {
         <GlobalSvgSelector id="sun" />
       </div>
       <div className={s.bottomBlock}>
-        <div className={s.thisTime}>
-          Время: <span>${Date.now()}</span>
-        </div>
         <div className={s.thisCity}>
           Город: <span>Краснодар</span>
         </div>
