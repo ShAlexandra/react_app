@@ -10,70 +10,48 @@ interface Props {
 
 export interface Day {
     day: string;
-    day_info: string;
     icon_id: string;
-    temp_day: string;
-    temp_night: string;
+    temp_max: number;
+    temp_min: number;
     info: string;
 }
 
 export const Days = ({ weatherList }: Props) => {
     const days: Day[] = [
         {
-            day: 'Сегодня',
-            day_info: '28 авг',
+            day: weatherList.list[0].dt_txt,
             icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
+            temp_max: weatherList.list[0].main.temp_max,
+            temp_min: weatherList.list[0].main.temp_min,
+            info: weatherList.list[0].weather[0].main
         },
         {
-            day: 'Завтра',
-            day_info: '29 авг',
+            day: weatherList.list[8].dt_txt,
             icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[1].main.temtemp_dayp}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
+            temp_max: weatherList.list[8].main.temp_max,
+            temp_min: weatherList.list[8].main.temp_min,
+            info: weatherList.list[8].weather[0].main
         },
         {
-            day: 'Ср',
-            day_info: '30 авг',
+            day: weatherList.list[16].dt_txt,
             icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
+            temp_max: weatherList.list[16].main.temp_max,
+            temp_min: weatherList.list[16].main.temp_min,
+            info: weatherList.list[16].weather[0].main
         },
         {
-            day: 'Чт',
-            day_info: '31 авг',
+            day: weatherList.list[24].dt_txt,
             icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
+            temp_max: weatherList.list[24].main.temp_max,
+            temp_min: weatherList.list[24].main.temp_min,
+            info: weatherList.list[24].weather[0].main
         },
         {
-            day: 'Пт',
-            day_info: '1 сен',
+            day: weatherList.list[32].dt_txt,
             icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
-        },
-        {
-            day: 'Сб',
-            day_info: '2 сен',
-            icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
-        },
-        {
-            day: 'Вс',
-            day_info: '3 сен',
-            icon_id: 'today-img',
-            temp_day: '${weatherList.main.weatherList[0].main.temp_day}',
-            temp_night: '${weatherList.main.weatherList[0].main.temp_night}',
-            info: 'облачно'
+            temp_max: weatherList.list[32].main.temp_max,
+            temp_min: weatherList.list[32].main.temp_min,
+            info: weatherList.list[32].weather[0].main
         }
     ];
     return <div className={_s.days}>{

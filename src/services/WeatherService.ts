@@ -9,8 +9,8 @@ export class WeatherServiceDay {
 }
 
 export class WeatherServiceDays {
-  static getDaysWeather(city: string, numberOfDays: number): Promise<AxiosResponse<WeatherList>> {
-    return api.get<WeatherList>(`/forecast/daily?q=${city}&cnt=${numberOfDays}`);
+  static getDaysWeather(city: string): Promise<AxiosResponse<WeatherList>> {
+    return api.get<WeatherList>(`/forecast?q=${city}`);
   }
 }
 

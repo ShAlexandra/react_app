@@ -15,52 +15,68 @@ type Response = {
 
 const initialState: daysWeather = {
     weatherList: {
-        main: {
-            weatherList:[
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
-                    }
+        list: {
+            0: {
+                dt_txt: "2022-12-28 00:00:00",
+                main: {
+                    temp_max: 0,
+                    temp_min: 0
                 },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
+                weather: {
+                    0: {
+                        main: "Sun"
                     }
+                }
+            },
+            8: {
+                dt_txt: "2022-12-28 00:00:00",
+                main: {
+                    temp_max: 0,
+                    temp_min: 0
                 },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
+                weather: {
+                    0: {
+                        main: "Sun"
                     }
+                }
+            },
+            16: {
+                dt_txt: "2022-12-28 00:00:00",
+                main: {
+                    temp_max: 0,
+                    temp_min: 0
                 },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
+                weather: {
+                    0: {
+                        main: "Sun"
                     }
+                }
+            },
+            24: {
+                dt_txt: "2022-12-28 00:00:00",
+                main: {
+                    temp_max: 0,
+                    temp_min: 0
                 },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
+                weather: {
+                    0: {
+                        main: "Sun"
                     }
+                }
+            },
+            32: {
+                dt_txt: "2022-12-28 00:00:00",
+                main: {
+                    temp_max: 0,
+                    temp_min: 0
                 },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
+                weather: {
+                    0: {
+                        main: "Sun"
                     }
-                },
-                {
-                    main:{
-                        temp_day:0,
-                        temp_night:0
-                    }
-                },
-            ]
-        }
+                }
+            },
+        },
     },
     isLoading: false,
     response:{

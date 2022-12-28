@@ -17,6 +17,11 @@ const initialState: currentWeather = {
     weather: {
         main: {
             temp:0
+        },
+        weather: {
+            0: {
+                main: "Sun"
+            }
         }
     },
     isLoading: false,

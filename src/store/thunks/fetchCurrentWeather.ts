@@ -1,10 +1,10 @@
-import { WeatherServiceDay } from "../../services/WeatherService"
-import { GraphicUVService } from "../../services/WeatherService"
+import { WeatherServiceDay, WeatherServiceDays } from "../../services/WeatherService"
 import { currentWeatherSlice } from "../slices/currentWeatherSlice"
+import { daysWeatherSlice } from "../slices/daysWeatherSlice"
 import { graphicUVSlice } from "../slices/graphicUVSlice"
 import { AppDispatch } from "../store"
 
-export const fetchCurrentWeather = 
+export const fetchCurrentWeather =
 (payload: string) => async (dispatch: AppDispatch) => {
     try{
         dispatch(currentWeatherSlice.actions.fetchCurrentWeather())
@@ -19,19 +19,26 @@ export const fetchCurrentWeather =
     } catch (error) {
         console.log(error)
     }
-    
 }
 
-export const fetchDaysWeather = 
-(city: string, numberOfDays: number) => async (dispatch: AppDispatch) => {
+export const fetchDaysWeather =
+(payload: string) => async (dispatch: AppDispatch) => {
     try{
-
+        dispatch(daysWeatherSlice.actions.fetchDaysWeather())
+        const res = await WeatherServiceDays.getDaysWeather(payload)
+        if (res.status === 200) {
+            dispatch(daysWeatherSlice.actions.
+                fetchDaysWeatherSuccess(res))
+        } else {
+            dispatch(daysWeatherSlice.actions.
+                fetchDaysWeatherError(res))
+        }
     } catch (error) {
         console.log(error)
     }
 }
 
-export const fetchGraphicUV = 
+export const fetchGraphicUV =
 (payload: string) => async (dispatch: AppDispatch) => {
     try{
         dispatch(graphicUVSlice.actions.fetchGraphicUV())
@@ -46,5 +53,5 @@ export const fetchGraphicUV =
     } catch (error) {
         console.log(error)
     }
-    
+
 }
