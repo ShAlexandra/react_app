@@ -74,12 +74,6 @@ export type WeatherList = {
     }
 }
 
-export type WeatherList = {
-    main: {
-        weatherList: Array<WeatherDays>
-    }
-}
-
 export type GraphicUV = {
     wind: {
         speed: number

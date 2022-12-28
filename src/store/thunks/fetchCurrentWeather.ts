@@ -1,4 +1,4 @@
-import { WeatherServiceDay, WeatherServiceDays } from "../../services/WeatherService"
+import { GraphicUVService, WeatherServiceDay, WeatherServiceDays } from "../../services/WeatherService"
 import { currentWeatherSlice } from "../slices/currentWeatherSlice"
 import { daysWeatherSlice } from "../slices/daysWeatherSlice"
 import { graphicUVSlice } from "../slices/graphicUVSlice"
